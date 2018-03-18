@@ -1,8 +1,8 @@
 //Dependencies
 import React from "react";
 //Custom
-import SelectInput from "../../../components/select";
-import TextInput from "../../../components/text";
+import SelectInput from "../../../components/inputTags/select";
+import TextInput from "../../../components/inputTags/textOrNumber";
 
 class Coordinator extends React.Component {
   render() {

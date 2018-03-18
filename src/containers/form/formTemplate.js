@@ -7,7 +7,7 @@ const Form = props => {
   return (
     <div>
       <h2>{title}</h2>
-      {content}g
+      {content}
     </div>
   );
 };
