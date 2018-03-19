@@ -1,18 +1,85 @@
 //Dependencies
 import React from "react";
 //Custom
-import SelectInput from "../../../components/tags/select";
-import TextInput from "../../../components/tags/textOrNumber";
+import SelectTemplate from "../../../components/tags/select";
+import InputTemplate from "../../../components/tags/input";
+
+const employers = [
+  {
+    id: 0,
+    name: "Daniel",
+    lastname: "Mitchell",
+    email: "daniel.mitchell@hussa.rs"
+  },
+  {
+    id: 1,
+    name: "Albert",
+    lastname: "Alexander",
+    email: "albert.alexander@hussa.rs"
+  },
+  {
+    id: 2,
+    name: "Philip",
+    lastname: "Hughes",
+    email: "philip.hughes@hussa.rs"
+  },
+  {
+    id: 3,
+    name: "Walter",
+    lastname: "Nelson",
+    email: "walter.nelson@hussa.rs"
+  },
+  {
+    id: 4,
+    name: "Ashley",
+    lastname: "Hernandez",
+    email: "ashley.hernandez@hussa.rs"
+  },
+  {
+    id: 5,
+    name: "Donna",
+    lastname: "Washington",
+    email: "donna.washington@hussa.rs"
+  },
+  {
+    id: 6,
+    name: "Andrew",
+    lastname: "White",
+    email: "andrew.white@hussa.rs"
+  },
+  {
+    id: 7,
+    name: "Sharon",
+    lastname: "Allen",
+    email: "sharon.allen@hussa.rs"
+  },
+  {
+    id: 8,
+    name: "Russell",
+    lastname: "Parker",
+    email: "russell.parker@hussa.rs"
+  },
+  {
+    id: 9,
+    name: "Janet",
+    lastname: "Stewart",
+    email: "janet.stewart@hussa.rs"
+  }
+];
 
 class Coordinator extends React.Component {
   render() {
+    const me = `${employers[4].name} ${employers[4].lastname}`
     return (
       <div>
-        <SelectInput
+        <SelectTemplate
+          name="responsible"
           label="Responsible"
-          options={["Pomarańcza", "Jabłko", "Kiwi"]}
+          defaultValue={me}
+          options={employers}
+          isRequired={true}
         />
-        <TextInput label="Email" text="Email" />
+        <InputTemplate type="email" name="email" label="Email" placeholder="Email" />
       </div>
     );
   }

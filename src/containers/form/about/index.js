@@ -2,7 +2,7 @@
 import React from "react";
 //Custom
 import Textarea from "../../../components/tags/textarea";
-import Select from "../../../components/tags/select";
+import SelectTemplate from "../../../components/tags/select";
 import PaymentTemplate from "./paymentTemplate";
 import Input from "../../../components/tags/input";
 
@@ -67,12 +67,12 @@ class About extends React.PureComponent {
           maxLength="140"
           isRequired={true}
         />
-        <Select
+        <SelectTemplate
           name="category"
           label="Category"
+          defaultValue="Select category (skills, interests, locations)"
           options={categories}
           additionalInfo="Describes topic and people who should be interested in this event"
-          isRequired={true}
         />
         <PaymentTemplate
           name="event"

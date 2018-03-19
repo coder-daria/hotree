@@ -3,7 +3,7 @@ import React, { Component } from "react";
 //Custom
 import Form from "../form/formTemplate";
 import About from "../form/about";
-// import Coordinator from "../form/coordinator";
+import Coordinator from "../form/coordinator";
 // import When from "../form/when";
 import { FormContainer } from "./styles";
 
@@ -25,7 +25,9 @@ function stringifyFormData(fd) {
   for (let key of fd.keys()) {
     data[key] = fd.get(key);
   }
+  console.log(JSON.stringify(data, null, 2))
   return JSON.stringify(data, null, 2);
+
 }
 
 class App extends Component {
@@ -43,8 +45,8 @@ class App extends Component {
     }
     this.setState({ displayErrors: false });
 
-    // const form = event.target;
-    // const data = new FormData(form);
+    const form = event.target;
+    const data = new FormData(form);
 
     // for (let name of data.keys()) {
     //   const input = form.elements[name];
@@ -57,9 +59,9 @@ class App extends Component {
     //   }
     // }
 
-    // this.setState({
-    //   res: stringifyFormData(data)
-    // });
+    this.setState({
+      res: stringifyFormData(data)
+    });
   }
 
   render() {
@@ -72,6 +74,7 @@ class App extends Component {
         className={displayErrors ? "displayErrors" : ""}
       >
         <Form title="About" content={<About />} />
+        <Form title="Coordinator" content={<Coordinator />} />
         <button type="submit">Submit</button>
       </FormContainer>
     );
@@ -80,5 +83,4 @@ class App extends Component {
 
 export default App;
 
-// <Form title="Coordinator" content={<Coordinator />} />
 // <Form title="When" content={<When />} />

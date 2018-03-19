@@ -34,6 +34,7 @@ class InputTemplate extends React.PureComponent {
 
 InputTemplate.propTypes = {
   label: PropTypes.string,
+  name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   additionalInfo: PropTypes.string,
