@@ -6,7 +6,7 @@ import Form from "../form/formTemplate";
 import About from "../form/about";
 import Coordinator from "../form/coordinator";
 import When from "../form/when";
-import { AppContainer, Header, H1, FormContainer } from "./styles";
+import { AppContainer, Header, H1, Button, FormContainer } from "./styles";
 
 // const inputParsers = {
 //   date(input) {
@@ -80,7 +80,7 @@ class App extends Component {
           <Form title="About" content={<About />} />
           <Form title="Coordinator" content={<Coordinator />} />
           <Form title="When" content={<When />} />
-          <button type="submit">Submit</button>
+          <Button type="submit">Publish event</Button>
         </FormContainer>
       </AppContainer>
     );

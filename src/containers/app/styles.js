@@ -25,10 +25,27 @@ export const H1 = styled.h1`
   padding-left: 25px;
 `;
 
+export const Button = styled.button`
+  width: 200px;
+  height: 50px;
+  background-color: rgb(241, 146, 62);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 12px;
+  outline: none;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+`;
+
 export const FormContainer = styled.form`
   height: calc(100% - 100px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+  margin: 40px 0;
 `;
