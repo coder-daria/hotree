@@ -1,11 +1,12 @@
 //Dependencies
 import React, { Component } from "react";
+import "sanitize.css/sanitize.css";
 //Custom
 import Form from "../form/formTemplate";
 import About from "../form/about";
 import Coordinator from "../form/coordinator";
 import When from "../form/when";
-import { FormContainer } from "./styles";
+import { AppContainer, Header, H1, FormContainer } from "./styles";
 
 // const inputParsers = {
 //   date(input) {
@@ -66,17 +67,22 @@ class App extends Component {
   render() {
     const { displayErrors } = this.state;
     return (
-      <FormContainer
-        id="form"
-        onSubmit={this.handleSubmit}
-        noValidate
-        className={displayErrors ? "displayErrors" : ""}
-      >
-        <Form title="About" content={<About />} />
-        <Form title="Coordinator" content={<Coordinator />} />
-        <Form title="When" content={<When />} />
-        <button type="submit">Submit</button>
-      </FormContainer>
+      <AppContainer>
+        <Header>
+          <H1>New event</H1>
+        </Header>
+        <FormContainer
+          id="form"
+          onSubmit={this.handleSubmit}
+          noValidate
+          className={displayErrors ? "displayErrors" : ""}
+        >
+          <Form title="About" content={<About />} />
+          <Form title="Coordinator" content={<Coordinator />} />
+          <Form title="When" content={<When />} />
+          <button type="submit">Submit</button>
+        </FormContainer>
+      </AppContainer>
     );
   }
 }

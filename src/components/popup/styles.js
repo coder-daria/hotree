@@ -9,5 +9,4 @@ export const Container = styled.div`
   top: 50px;
   left: 300px;
   background-color: white;
-  border: 2px solid black;
 `;

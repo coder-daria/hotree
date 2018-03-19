@@ -6,14 +6,10 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const CharactersInfo = styled.div`
-  padding-top: 5px;
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Span = styled.span`
+export const AdditionalInfo = styled.span`
+  display: ${props => (props.isVisible ? "flex" : "none")};
   font-size: 12px;
   color: rgb(209, 208, 208);
   font-style: italic;
+  padding-top: 5px;
 `;

@@ -2,13 +2,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 //Custom
-import {Container } from './styles';
+import { Container, H2 } from "./styles";
 
 const Form = props => {
   const { title, content } = props;
   return (
     <Container>
-      <h2>{title}</h2>
+      <H2>{title}</H2>
       {content}
     </Container>
   );

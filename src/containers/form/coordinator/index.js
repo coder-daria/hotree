@@ -1,8 +1,9 @@
 //Dependencies
 import React from "react";
 //Custom
-import SelectTemplate from "../../../components/tags/select";
-import InputTemplate from "../../../components/tags/input/other";
+import Select from "../../../components/tags/select";
+import Input from "../../../components/tags/input/other";
+import InputTemplate from "../inputTemplate";
 
 const employers = [
   {
@@ -72,18 +73,26 @@ class Coordinator extends React.Component {
     const me = `${employers[4].name} ${employers[4].lastname}`;
     return (
       <div>
-        <SelectTemplate
-          name="responsible"
+        <InputTemplate
           label="Responsible"
-          defaultValue={me}
-          options={employers}
-          isRequired={true}
+          content={
+            <Select
+              name="responsible"
+              defaultValue={me}
+              options={employers}
+              isRequired={true}
+            />
+          }
         />
         <InputTemplate
-          type="email"
-          name="email"
           label="Email"
-          placeholder="Email"
+          content={
+            <Input 
+              type="email" 
+              name="email" 
+              placeholder="Email"
+            />
+          }
         />
       </div>
     );
