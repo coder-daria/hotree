@@ -1,10 +1,10 @@
 //Dependencies
 import React from "react";
 //Custom
-import Textarea from "../../../components/inputTags/textarea";
-import SelectInput from "../../../components/inputTags/select";
-import RadioInput from "../../../components/inputTags/radio";
-import Input from "../../../components/inputTags/textOrNumber";
+import Textarea from "../../../components/tags/textarea";
+import Select from "../../../components/tags/select";
+import PaymentTemplate from "./paymentTemplate";
+import Input from "../../../components/tags/input";
 
 const categories = [
   {
@@ -55,30 +55,36 @@ class About extends React.PureComponent {
       <div>
         <Input
           type="text"
+          name="title"
           label="Title"
-          text="Make it short and clear"
+          placeholder="Make it short and clear"
           isRequired={true}
         />
         <Textarea
+          name="description"
           label="Description"
-          text="Write about your event, be creative"
-          isRequired={true}
+          placeholder="Write about your event, be creative"
           maxLength="140"
+          isRequired={true}
         />
-        <SelectInput
+        <Select
+          name="category"
           label="Category"
           options={categories}
           additionalInfo="Describes topic and people who should be interested in this event"
+          isRequired={true}
         />
-        <RadioInput
+        <PaymentTemplate
+          name="event"
           label="Payment"
           options={["Free event", "Paid event"]}
-          name="event"
         />
         <Input
           type="number"
+          pattern="\d+"
+          name="reward"
           label="Reward"
-          text="Number"
+          placeholder="Number"
           additionalInfo="reward points for attendance"
         />
       </div>

@@ -3,13 +3,13 @@ import React from "react";
 import PropTypes from "prop-types";
 //Custom
 
-const SelectInput = props => {
-  const { label, options, additionalInfo } = props;
+const SelectTemplate = props => {
+  const { label, name, options, additionalInfo, isRequired } = props;
   return (
     <div>
       <label>{label}</label>
-      <select onChange={e => console.log("selected!")}>
-        <option defaultValue="" hidden>
+      <select name={name} required={isRequired}>
+        <option value="" hidden>
           Select category (skills, interests, locations)
         </option>
         {options.map(option => {
@@ -25,10 +25,10 @@ const SelectInput = props => {
   );
 };
 
-SelectInput.propTypes = {
+SelectTemplate.propTypes = {
   label: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
   additionalInfo: PropTypes.string
 };
 
-export default SelectInput;
+export default SelectTemplate;

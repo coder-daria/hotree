@@ -1,14 +1,16 @@
 //Dependencies
 import React from "react";
 import PropTypes from "prop-types";
+//Custom
+import {Container } from './styles';
 
 const Form = props => {
   const { title, content } = props;
   return (
-    <div>
+    <Container>
       <h2>{title}</h2>
       {content}
-    </div>
+    </Container>
   );
 };
 
