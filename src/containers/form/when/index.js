@@ -1,8 +1,8 @@
 //Dependencies
 import React from "react";
 //Custom
-import Date from "../../../components/date";
-import Text from "../../../components/text";
+import Date from "../../../components/tags/date";
+import Text from "../../../components/tags/textOrNumber";
 
 class When extends React.Component {
   render() {

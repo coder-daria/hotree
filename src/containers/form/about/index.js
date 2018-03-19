@@ -1,36 +1,92 @@
 //Dependencies
 import React from "react";
 //Custom
-import Textarea from "../../../components/textarea";
-import SelectInput from "../../../components/select";
-import RadioInput from "../../../components/radio";
-import TextInput from "../../../components/text";
+import Textarea from "../../../components/tags/textarea";
+import Select from "../../../components/tags/select";
+import PaymentTemplate from "./paymentTemplate";
+import Input from "../../../components/tags/input";
 
-class About extends React.Component {
+const categories = [
+  {
+    id: 0,
+    name: "Cycling"
+  },
+  {
+    id: 1,
+    name: "Hiking"
+  },
+  {
+    id: 2,
+    name: "Cooking"
+  },
+  {
+    id: 3,
+    name: "Rock climbing"
+  },
+  {
+    id: 4,
+    name: "Yoga"
+  },
+  {
+    id: 5,
+    name: "Fencing"
+  },
+  {
+    id: 6,
+    name: "Swimming"
+  },
+  {
+    id: 7,
+    name: "Badminton"
+  },
+  {
+    id: 8,
+    name: "Running"
+  },
+  {
+    id: 9,
+    name: "Dance"
+  }
+];
+
+class About extends React.PureComponent {
   render() {
     return (
       <div>
-        <TextInput label="Title" text="Make it short and clear" />
+        <Input
+          type="text"
+          name="title"
+          label="Title"
+          placeholder="Make it short and clear"
+          isRequired={true}
+        />
         <Textarea
+          name="description"
           label="Description"
-          text="Write about your event, be creative"
+          placeholder="Write about your event, be creative"
+          maxLength="140"
+          isRequired={true}
         />
-        <SelectInput
+        <Select
+          name="category"
           label="Category"
-          options={["Pomarańcza", "Jabłko", "Kiwi"]}
+          options={categories}
+          additionalInfo="Describes topic and people who should be interested in this event"
+          isRequired={true}
         />
-        <RadioInput
+        <PaymentTemplate
+          name="event"
           label="Payment"
           options={["Free event", "Paid event"]}
-          name="event"
         />
-        <div>
-          <TextInput
-            label="Reward"
-            text="Number"
-            additionalInfo="reward points for attendance"
-          />
-        </div>
+        <Input
+          type="number"
+          pattern="\d+"
+          name="reward"
+          label="Reward"
+          placeholder="Number"
+          additionalInfo="reward points for attendance"
+        />
       </div>
     );
   }
