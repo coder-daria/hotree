@@ -4,7 +4,7 @@ import React from "react";
 import Textarea from "../../../components/tags/textarea";
 import SelectTemplate from "../../../components/tags/select";
 import PaymentTemplate from "./paymentTemplate";
-import Input from "../../../components/tags/input";
+import Input from "../../../components/tags/input/other";
 
 const categories = [
   {
@@ -75,11 +75,7 @@ class About extends React.PureComponent {
           defaultOption="Select category (skills, interests, locations)"
           additionalInfo="Describes topic and people who should be interested in this event"
         />
-        <PaymentTemplate
-          name="event"
-          label="Payment"
-          options={["Free event", "Paid event"]}
-        />
+        <PaymentTemplate />
         <Input
           type="number"
           pattern="\d+"

@@ -2,7 +2,7 @@
 import React from "react";
 //Custom
 import SelectTemplate from "../../../components/tags/select";
-import InputTemplate from "../../../components/tags/input";
+import InputTemplate from "../../../components/tags/input/other";
 
 const employers = [
   {
@@ -69,7 +69,7 @@ const employers = [
 
 class Coordinator extends React.Component {
   render() {
-    const me = `${employers[4].name} ${employers[4].lastname}`
+    const me = `${employers[4].name} ${employers[4].lastname}`;
     return (
       <div>
         <SelectTemplate
@@ -79,7 +79,12 @@ class Coordinator extends React.Component {
           options={employers}
           isRequired={true}
         />
-        <InputTemplate type="email" name="email" label="Email" placeholder="Email" />
+        <InputTemplate
+          type="email"
+          name="email"
+          label="Email"
+          placeholder="Email"
+        />
       </div>
     );
   }
