@@ -2,19 +2,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 //Custom
+import { Container, AdditionalInfo } from "./styles";
 
-const SelectTemplate = props => {
+const Select = props => {
   const {
-    label,
     name,
     defaultValue,
     options,
     additionalInfo,
+    isVisible,
     isRequired
   } = props;
+  const isInfoProvided = additionalInfo.length > 0 ? true : false;
   return (
-    <div>
-      <label>{label}</label>
+    <Container>
       <select name={name} required={isRequired}>
         <option>{defaultValue}</option>
         {options.map(option => {
@@ -25,16 +26,22 @@ const SelectTemplate = props => {
           );
         })}
       </select>
-      <span>{additionalInfo}</span>
-    </div>
+      <AdditionalInfo isVisible={isInfoProvided}>
+        {additionalInfo}
+      </AdditionalInfo>
+    </Container>
   );
 };
 
-SelectTemplate.propTypes = {
-  label: PropTypes.string.isRequired,
-  defaultValue: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
-  additionalInfo: PropTypes.string
+Select.defaultProps = {
+  additionalInfo: ""
 };
 
-export default SelectTemplate;
+Select.propTypes = {
+  defaultValue: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+  additionalInfo: PropTypes.string,
+  isVisible: PropTypes.bool
+};
+
+export default Select;

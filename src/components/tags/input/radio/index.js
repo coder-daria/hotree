@@ -1,29 +1,29 @@
 //Dependencies
 import React from "react";
+//Custom
+import { Container, Content, Label } from "./styles";
 
-const radioInputs = props => {
+const RadioInputs = props => {
   const { options, name, defaultChecked, onChange } = props;
   return (
-    <div>
+    <Container>
       {options.map(option => {
         return (
-          <div key={option}>
-            <label>
-              <input
-                type="radio"
-                name={name}
-                value={option}
-                onChange={e => onChange(e)}
-                defaultChecked={defaultChecked === option}
-                required
-              />
-              {option}
-            </label>
-          </div>
+          <Content>
+            <input
+              type="radio"
+              name={name}
+              value={option}
+              onChange={e => onChange(e)}
+              defaultChecked={defaultChecked === option}
+              required
+            />
+            <Label key={option}>{option}</Label>
+          </Content>
         );
       })}
-    </div>
+    </Container>
   );
 };
 
-export default radioInputs;
+export default RadioInputs;

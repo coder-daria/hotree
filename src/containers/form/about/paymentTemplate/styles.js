@@ -20,3 +20,7 @@ export const FeeContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+
+export const Span = styled.span`
+  padding-left: 5px;
+`;

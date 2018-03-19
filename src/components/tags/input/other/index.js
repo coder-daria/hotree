@@ -1,8 +1,10 @@
 //Dependencies
 import React from "react";
 import PropTypes from "prop-types";
+//Custom
+import { Container, Input, AdditionalInfo } from "./styles";
 
-class InputTemplate extends React.PureComponent {
+class InputWrapper extends React.PureComponent {
   render() {
     const {
       label,
@@ -15,23 +17,30 @@ class InputTemplate extends React.PureComponent {
       additionalInfo,
       isRequired
     } = this.props;
+    const isInfoProvided = additionalInfo.length > 0 ? true : false;
     return (
-      <div>
-        <label>{label}</label>
-        <input
+      <Container>
+        <Input
           type={type}
           name={name}
           placeholder={placeholder}
           pattern={pattern}
           required={isRequired}
+          isVisible={isInfoProvided}
         />
-        <span>{additionalInfo}</span>
-      </div>
+        <AdditionalInfo isVisible={isInfoProvided}>
+          {additionalInfo}
+        </AdditionalInfo>
+      </Container>
     );
   }
 }
 
-InputTemplate.propTypes = {
+InputWrapper.defaultProps = {
+  additionalInfo: ""
+};
+
+InputWrapper.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -40,4 +49,4 @@ InputTemplate.propTypes = {
   isRequired: PropTypes.bool
 };
 
-export default InputTemplate;
+export default InputWrapper;

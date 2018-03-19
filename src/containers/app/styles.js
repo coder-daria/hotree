@@ -17,7 +17,6 @@ export const Header = styled.div`
 
 export const H1 = styled.h1`
   color: white;
-  font-weight: 100;
   font-size: 40px;
   margin: 0;
   align-self: center;

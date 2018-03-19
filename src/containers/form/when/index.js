@@ -2,19 +2,24 @@
 import React from "react";
 //Custom
 import DateTemplate from "./dateTemplate";
-import InputTemplate from "../../../components/tags/input/other";
+import Input from "../../../components/tags/input/other";
+import InputTemplate from "../inputTemplate/index";
 
 class When extends React.Component {
   render() {
     return (
       <div>
-        <DateTemplate />
+        <InputTemplate label="Starts on" content={<DateTemplate />} />
         <InputTemplate
-          type="number"
           label="Duration"
-          name="when"
-          text="Number"
-          additionalInfo="hour"
+          content={
+            <Input
+              type="number"
+              name="when"
+              text="Number"
+              additionalInfo="hour"
+            />
+          }
         />
       </div>
     );

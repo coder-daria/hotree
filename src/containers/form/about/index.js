@@ -5,6 +5,7 @@ import Textarea from "../../../components/tags/textarea";
 import SelectTemplate from "../../../components/tags/select";
 import PaymentTemplate from "./paymentTemplate";
 import Input from "../../../components/tags/input/other";
+import InputTemplate from "../inputTemplate/index";
 
 const categories = [
   {
@@ -53,36 +54,52 @@ class About extends React.PureComponent {
   render() {
     return (
       <div>
-        <Input
-          type="text"
-          name="title"
+        <InputTemplate
           label="Title"
-          placeholder="Make it short and clear"
-          isRequired={true}
+          content={
+            <Input
+              type="text"
+              name="title"
+              placeholder="Make it short and clear"
+              isRequired={true}
+            />
+          }
         />
-        <Textarea
-          name="description"
+        <InputTemplate
           label="Description"
-          placeholder="Write about your event, be creative"
-          maxLength="140"
-          isRequired={true}
+          content={
+            <Textarea
+              name="description"
+              placeholder="Write about your event, be creative"
+              maxLength="140"
+              isRequired={true}
+            />
+          }
         />
-        <SelectTemplate
-          name="category"
+        <InputTemplate
           label="Category"
-          defaultValue="Select category (skills, interests, locations)"
-          options={categories}
-          defaultOption="Select category (skills, interests, locations)"
-          additionalInfo="Describes topic and people who should be interested in this event"
+          content={
+            <SelectTemplate
+              name="category"
+              additionalInfo="Describes topic and people who should be interested in this event"
+              defaultValue="Select category (skills, interests, locations)"
+              options={categories}
+              defaultOption="Select category (skills, interests, locations)"
+            />
+          }
         />
-        <PaymentTemplate />
-        <Input
-          type="number"
-          pattern="\d+"
-          name="reward"
+        <InputTemplate label="Payment" content={<PaymentTemplate />} />
+        <InputTemplate
           label="Reward"
-          placeholder="Number"
-          additionalInfo="reward points for attendance"
+          content={
+            <Input
+              type="number"
+              additionalInfo="reward points for attendance"
+              pattern="\d+"
+              name="reward"
+              placeholder="Number"
+            />
+          }
         />
       </div>
     );
