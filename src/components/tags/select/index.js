@@ -4,18 +4,23 @@ import PropTypes from "prop-types";
 //Custom
 
 const SelectTemplate = props => {
-  const { label, name, options, additionalInfo, isRequired } = props;
+  const {
+    label,
+    name,
+    defaultValue,
+    options,
+    additionalInfo,
+    isRequired
+  } = props;
   return (
     <div>
       <label>{label}</label>
       <select name={name} required={isRequired}>
-        <option value="" hidden>
-          Select category (skills, interests, locations)
-        </option>
+        <option>{defaultValue}</option>
         {options.map(option => {
           return (
-            <option key={option.name} value={option.name}>
-              {option.name}
+            <option key={option.name}>
+              {option.name} {option.lastname}
             </option>
           );
         })}
@@ -27,6 +32,7 @@ const SelectTemplate = props => {
 
 SelectTemplate.propTypes = {
   label: PropTypes.string.isRequired,
+  defaultValue: PropTypes.string.isRequired,
   options: PropTypes.array.isRequired,
   additionalInfo: PropTypes.string
 };
