@@ -7,11 +7,12 @@ export const AppContainer = styled.div`
 `;
 
 export const Header = styled.div`
+  height: 100px;
   width: 100%;
   background-color: rgb(59, 89, 140);
-  height: 100px;
-  display: flex;
   border-top: 20px solid rgb(35, 59, 101);
+  display: flex;
+  justify-content: center;
 `;
 
 export const H1 = styled.h1`
@@ -19,12 +20,16 @@ export const H1 = styled.h1`
   font-weight: 100;
   font-size: 40px;
   margin: 0;
-  text-align: center;
   align-self: center;
-  padding-left: 30%;
+  width: 80%;
+  text-align: start;
+  padding-left: 25px;
 `;
 
 export const FormContainer = styled.form`
-  border: 2px solid black;
   height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
 `;

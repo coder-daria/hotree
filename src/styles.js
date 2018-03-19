@@ -6,7 +6,7 @@ injectGlobal`
       background: rgb(247, 247, 247);
       color: rgb(45, 86, 141);
     }
-    
+
     input, textarea, select  {
       display: block;
       margin-bottom: 15px;
@@ -17,11 +17,10 @@ injectGlobal`
       font-size: 16px;
       outline: none;
     }
-    
-    pre, code {
-      font-family: 'Roboto Mono', Monaco;
+    h1 {
+      margin: 0;
     }
-    
+
     button {
       cursor: pointer;
       padding: 12px;
@@ -32,20 +31,6 @@ injectGlobal`
       outline: none;
       color: white;
       border-bottom: 2px solid #797979;
-    }
-    
-    form {
-      display: inline-block;
-      margin-right: 50px;
-      vertical-align: top;
-    }
-    
-    .res-block {
-      display: inline-block;
-    }
-    
-    h3 {
-      margin-top: 0;
     }
     
     .displayErrors input:invalid, .displayErrors textarea:invalid, .displayErrors select:invalid {
