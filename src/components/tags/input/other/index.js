@@ -1,7 +1,6 @@
 //Dependencies
 import React from "react";
 import PropTypes from "prop-types";
-//Custom
 
 class InputTemplate extends React.PureComponent {
   render() {
@@ -34,8 +33,8 @@ class InputTemplate extends React.PureComponent {
 
 InputTemplate.propTypes = {
   label: PropTypes.string,
-  name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   additionalInfo: PropTypes.string,
   isRequired: PropTypes.bool

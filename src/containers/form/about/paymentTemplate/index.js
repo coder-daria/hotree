@@ -1,9 +1,9 @@
 //Dependencies
 import React from "react";
-import PropTypes from "prop-types";
 //Custom
-import Input from "../../../../components/tags/input";
-import { Container, Content, Label, FeeContainer } from "./styles";
+import Input from "../../../../components/tags/input/other";
+import RadioInputs from "../../../../components/tags/input/radio";
+import { Container, FeeContainer } from "./styles";
 
 class PaymentTemplate extends React.PureComponent {
   state = {
@@ -17,47 +17,31 @@ class PaymentTemplate extends React.PureComponent {
   }
 
   render() {
-    const { label, name, options } = this.props;
     const { selectedOption } = this.state;
     const isVisible = selectedOption === "Paid event";
     return (
       <Container>
-        <label>{label}</label>
-        {options.map(option => {
-          return (
-            <Content key={option}>
-              <Label>
-                <input
-                  type="radio"
-                  name={name}
-                  value={option}
-                  onChange={e => this.changeEvent(e)}
-                  defaultChecked={"Free event" === option}
-                  required
-                />
-                {option}
-              </Label>
-            </Content>
-          );
-        })}
-        <FeeContainer isVisible={isVisible}>
-          <Input
-            name="fee"
-            type="number"
-            placeholder="Fee"
-            isRequired={isVisible}
+        <label>Payment</label>
+        <div>
+          <RadioInputs
+            name="payment"
+            options={["Free event", "Paid event"]}
+            defaultChecked="Free event"
+            onChange={e => this.changeEvent(e)}
           />
-          <span>$</span>
-        </FeeContainer>
+          <FeeContainer isVisible={isVisible}>
+            <Input
+              name="fee"
+              type="number"
+              placeholder="Fee"
+              isRequired={isVisible}
+            />
+            <span>$</span>
+          </FeeContainer>
+        </div>
       </Container>
     );
   }
 }
-
-PaymentTemplate.propTypes = {
-  label: PropTypes.string,
-  name: PropTypes.string,
-  options: PropTypes.array.isRequired
-};
 
 export default PaymentTemplate;

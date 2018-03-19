@@ -1,15 +1,21 @@
 //Dependencies
 import React from "react";
 //Custom
-import Date from "../../../components/tags/date";
-import Text from "../../../components/tags/textOrNumber";
+import DateTemplate from "./dateTemplate";
+import InputTemplate from "../../../components/tags/input/other";
 
 class When extends React.Component {
   render() {
     return (
       <div>
-        <Date label="Starts on" />
-        <Text label="Duration" text="Number" additionalInfo="hour" />
+        <DateTemplate />
+        <InputTemplate
+          type="number"
+          label="Duration"
+          name="when"
+          text="Number"
+          additionalInfo="hour"
+        />
       </div>
     );
   }
