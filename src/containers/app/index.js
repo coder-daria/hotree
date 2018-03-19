@@ -48,6 +48,7 @@ class App extends Component {
     const form = event.target;
     const data = new FormData(form);
 
+
     // for (let name of data.keys()) {
     //   const input = form.elements[name];
     //   const parserName = input.dataset.parse;
@@ -82,5 +83,4 @@ class App extends Component {
 }
 
 export default App;
-
 // <Form title="When" content={<When />} />

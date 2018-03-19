@@ -72,6 +72,7 @@ class About extends React.PureComponent {
           label="Category"
           defaultValue="Select category (skills, interests, locations)"
           options={categories}
+          defaultOption="Select category (skills, interests, locations)"
           additionalInfo="Describes topic and people who should be interested in this event"
         />
         <PaymentTemplate

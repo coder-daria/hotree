@@ -16,18 +16,14 @@ const SelectTemplate = props => {
     <div>
       <label>{label}</label>
       <select name={name} required={isRequired}>
-        <optgroup label="Me">
-          <option>{defaultValue}</option>
-        </optgroup>
-        <optgroup label="Others">
-          {options.map(option => {
-            return (
-              <option key={option.name} value={option.name}>
-                {option.name} {option.lastname}
-              </option>
-            );
-          })}
-        </optgroup>
+        <option>{defaultValue}</option>
+        {options.map(option => {
+          return (
+            <option key={option.name}>
+              {option.name} {option.lastname}
+            </option>
+          );
+        })}
       </select>
       <span>{additionalInfo}</span>
     </div>
